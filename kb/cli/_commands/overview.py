@@ -18,7 +18,7 @@ from kb.cli._commands.whoami import report
 from kb.cli._output import emit_result
 
 _ARTIFACTS = [
-    "culture.yaml + CLAUDE.md — mesh identity (suffix + backend)",
+    "culture.yaml + AGENTS.colleague.md — mesh identity (suffix + backend)",
     ".claude/skills/ — the canonical guildmaster skill kit (cite-don't-import)",
     "docs/skill-sources.md — skill provenance ledger",
     "pyproject.toml + .github/workflows/ — buildable, deployable package baseline",

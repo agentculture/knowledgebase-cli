@@ -1,6 +1,6 @@
 [project]
 name = "knowledgebase-cli"
-version = "0.3.1"
+version = "0.3.2"
 description = "An agent and CLI that manages Amazon Bedrock Knowledge Bases — data sources, ingestion jobs, and managed-RAG retrieval."
 readme = "README.md"
 license = "MIT"
@@ -19,7 +19,10 @@ dependencies = []
 Homepage = "https://github.com/agentculture/knowledgebase-cli"
 Issues = "https://github.com/agentculture/knowledgebase-cli/issues"
 
+# Primary command matches the agent name (mirrors colleague's `colleague` /
+# `clg`); `kb` stays as the short alias. Both dispatch the same entry point.
 [project.scripts]
+knowledgebase-cli = "kb.cli:main"
 kb = "kb.cli:main"
 
 [build-system]

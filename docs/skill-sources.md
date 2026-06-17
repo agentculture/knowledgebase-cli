@@ -15,10 +15,13 @@ renamed `convertible`. guildmaster's re-broadcast still carries the old
 `outsource` name, so `ask-colleague` is vendored **directly from colleague** as a
 tracked local divergence (see [below](#local-divergence--outsource--ask-colleague-2026-06-06)).
 
-Every vendored `SKILL.md` carries `type: command`. knowledgebase-cli
-declares a culture agent (`culture.yaml`, `backend: claude`), and
-`core.skill_loader` silently skips any `SKILL.md` lacking `type:` — so the field
-is load-bearing, even where guildmaster's upstream copy omits it.
+Every vendored `SKILL.md` carries `type: command`. knowledgebase-cli declares a
+`colleague`-backed agent (`culture.yaml`, `backend: colleague`); the colleague
+runtime folds `.claude/skills/*/SKILL.md` into its resident prompt via
+`colleague learn_from`. The `type:` field stays load-bearing because the kit
+remains portable to the culture/`claude` backend, whose `core.skill_loader`
+silently skips any `SKILL.md` lacking it — so it is kept even where
+guildmaster's upstream copy omits it.
 
 | Skill | Upstream | Origin | Notes | Last synced |
 |-------|----------|--------|-------|-------------|

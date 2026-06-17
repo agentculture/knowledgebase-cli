@@ -7,7 +7,7 @@ An agent and CLI that manages Amazon Bedrock Knowledge Bases — data sources, i
 - **An agent-first CLI** cited from [teken](https://github.com/agentculture/teken)
   (`afi-cli`) — the runtime package has no third-party dependencies.
 - **A mesh identity** — `culture.yaml` (`suffix` + `backend`) and the matching
-  prompt file (`CLAUDE.md` for `backend: claude`).
+  prompt file (this agent is `backend: colleague`, so `AGENTS.colleague.md`).
 - **The canonical guildmaster skill kit** (11 skills) under `.claude/skills/`,
   vendored cite-don't-import. See [`docs/skill-sources.md`](docs/skill-sources.md).
 - **A build + deploy baseline** — pytest, lint, the agent-first rubric gate, and

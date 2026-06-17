@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/). This project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.2] - 2026-06-18
+
+### Added
+
+- `knowledgebase-cli` is now the **primary console script** (alongside the `kb`
+  short alias), mirroring colleague's `colleague` / `clg` pair. This makes the
+  invokable command match the agent name and the argparse `prog`, fixes the
+  README's `uv run knowledgebase-cli …` examples (the binary previously only
+  existed as `kb`), and resolves the agent-first rubric's `explain_self` check
+  (`explain <binary-name>` now resolves; added a `("kb",)` catalog alias too).
+
+### Changed
+
+- CLAUDE.md: replace the bootstrap seed with a full Claude Code guidance file
+  from `/init` — documents the scaffold-vs-implemented gap (the Bedrock KB
+  domain is the stated purpose but not yet built), the CLI dispatch / error /
+  output contracts, the naming model, the colleague-backend runtime-prompt
+  mapping (`AGENTS.colleague.md`), and the vendored-skill / version-bump / CI
+  conventions.
+- Reconcile stale `backend: claude` references to the declared
+  `backend: colleague` (CHANGELOG 0.3.0 promotion): `README.md`, the `explain`
+  catalog (`_ROOT` / `_DOCTOR`), the `overview` / `learn` identity text, and
+  `docs/skill-sources.md` now describe `AGENTS.colleague.md` as the mesh runtime
+  prompt and the colleague skill-loading path. The `doctor` backend→prompt-file
+  map keeps all four backends (it is a reusable lookup, not an identity claim).
+
 ## [0.3.1] - 2026-06-13
 
 ### Changed

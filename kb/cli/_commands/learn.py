@@ -17,7 +17,7 @@ knowledgebase-cli — a clonable template for AgentCulture mesh agents.
 Purpose
 -------
 Scaffold for a new Culture mesh agent: an agent-first CLI (cited from the teken
-`python-cli` reference), an identity (culture.yaml + CLAUDE.md), the canonical
+`python-cli` reference), an identity (culture.yaml + AGENTS.colleague.md), the canonical
 guildmaster skill kit under .claude/skills/, and a deploy/CI baseline. Clone it,
 rename the package, and edit culture.yaml to mint a new agent.
 
