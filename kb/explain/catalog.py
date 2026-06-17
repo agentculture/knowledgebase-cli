@@ -1,7 +1,8 @@
 """Markdown catalog for ``knowledgebase-cli explain <path>``.
 
-Each entry is verbatim markdown. Keys are command-path tuples. The empty tuple
-and ``("knowledgebase-cli",)`` both resolve to the root entry.
+Each entry is verbatim markdown. Keys are command-path tuples. The empty tuple,
+``("knowledgebase-cli",)``, and the short-alias ``("kb",)`` all resolve to the
+root entry.
 
 Keep bodies self-contained: an agent reading one entry should get enough
 context without chaining reads.
