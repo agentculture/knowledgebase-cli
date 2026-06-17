@@ -1,7 +1,8 @@
 """Markdown catalog for ``knowledgebase-cli explain <path>``.
 
-Each entry is verbatim markdown. Keys are command-path tuples. The empty tuple
-and ``("knowledgebase-cli",)`` both resolve to the root entry.
+Each entry is verbatim markdown. Keys are command-path tuples. The empty tuple,
+``("knowledgebase-cli",)``, and the short-alias ``("kb",)`` all resolve to the
+root entry.
 
 Keep bodies self-contained: an agent reading one entry should get enough
 context without chaining reads.
@@ -14,9 +15,11 @@ _ROOT = """\
 
 A clonable template for AgentCulture mesh agents. It carries an agent-first CLI
 (cited from the teken `python-cli` reference), a mesh identity (`culture.yaml` +
-`CLAUDE.md`), the canonical guildmaster skill kit under `.claude/skills/`, and a
-buildable/deployable package baseline. Clone it, rename the package, edit
-`culture.yaml`, and you have a new agent.
+`AGENTS.colleague.md`), the canonical guildmaster skill kit under
+`.claude/skills/`, and a buildable/deployable package baseline. Clone it, rename
+the package, edit `culture.yaml`, and you have a new agent.
+
+Invoke as `knowledgebase-cli` (the `kb` short alias dispatches the same CLI).
 
 ## Verbs
 
@@ -94,8 +97,9 @@ _DOCTOR = """\
 # knowledgebase-cli doctor
 
 Checks the agent-identity invariants `steward doctor` verifies:
-prompt-file-present and backend-consistency (`claude` → `CLAUDE.md`), plus a
-skills-present check. Exits 1 when unhealthy.
+prompt-file-present and backend-consistency (this agent is `backend: colleague`,
+so the required prompt file is `AGENTS.colleague.md`), plus a skills-present
+check. Exits 1 when unhealthy.
 
 ## Usage
 
@@ -119,6 +123,7 @@ itself (distinct from the global `overview`, which describes the agent).
 ENTRIES: dict[tuple[str, ...], str] = {
     (): _ROOT,
     ("knowledgebase-cli",): _ROOT,
+    ("kb",): _ROOT,  # short-alias self-name → same root doc
     ("whoami",): _WHOAMI,
     ("learn",): _LEARN,
     ("explain",): _EXPLAIN,
